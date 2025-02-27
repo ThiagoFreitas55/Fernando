@@ -48,13 +48,7 @@
 </head>
 
 <body>
-  <!--<div>
-      <a title="Home" class="text-bold text-uppercase black--text">
-        <div class="logoHolder"> 
-          <img class="logo" src="imgs/logo-Quantika.jpeg"> 
-        </div>
-      </a>
-    </div>-->
+ 
   <header>
     <div class="header-content">
       <div class="flex justify-space-between align-center" style="height:18px">
@@ -121,12 +115,22 @@
     </div>
   </header>
   <section id="presentation" class="hero-section">
-    <div class="hero-image-container">
-      <img src="imgs/laboratorio-3.jpg" alt="Laboratório Quantyka" loading="lazy" />
-      <img src="imgs/laborstorio2.jpg" Laboratório Quantyka" loading="lazy" />
-      <img src="imgs/laboratorio-1.jpg" alt="Laboratório Quantyka" loading="lazy" />
-
-    </div>
+   <!-- Estrutura HTML - substitua sua div atual por esta -->
+<div class="hero-carousel">
+  <div class="hero-carousel-container">
+    <img src="imgs/laboratorio-3.jpg" alt="Laboratório Quantyka" class="active" loading="lazy" />
+    <img src="imgs/laborstorio2.jpg" alt="Quantyka" loading="lazy" />
+    <img src="imgs/laboratorio-1.jpg" alt="Laboratório Quantyka" loading="lazy" />
+  </div>
+  
+  <!-- Indicadores (opcional) -->
+  <div class="carousel-indicators">
+    <span class="indicator active" data-index="0"></span>
+    <span class="indicator" data-index="1"></span>
+    <span class="indicator" data-index="2"></span>
+  </div>
+  
+</div>
 
     <div class="hero-content">
       <h1 class="hero-title">Excelência em Produtos Laboratoriais</h1>
@@ -182,7 +186,7 @@
         <div class="card-content">
           <h3>Nosso Propósito</h3>
           <p>Temos um portifólio completo de produtos para atender as necessidades do seu laboratório, com
-            atendimento humanizado e sem burocracia.
+            atendimento humanizado e sem burocracia.
           </p>
         </div>
       </div>
@@ -463,7 +467,10 @@
             </div>
           </div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form"
+        action="https://formcarry.com/s/zOL05o_KmEM"
+        method="POST"
+        enctype="multipart/form-data">
           <div class="form-group">
             <input type="text" id="name" name="name" required>
             <label for="name">Nome</label>
