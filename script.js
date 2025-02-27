@@ -226,7 +226,7 @@
 
   // Script para o funcionamento do carrossel
 document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.querySelectorAll('.hero-carousel-container img');
+  const slides = document.querySelectorAll('.hero-image-container img');
   const indicators = document.querySelectorAll('.carousel-indicators .indicator');
   const prevBtn = document.querySelector('.carousel-nav.prev');
   const nextBtn = document.querySelector('.carousel-nav.next');
