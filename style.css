@@ -546,6 +546,7 @@ border-radius: 8px;
   .hero-content {
     padding: 2rem;
     text-align: center;
+    margin: 46px -28px;
   }
 }
 
