@@ -90,6 +90,7 @@ header .header-content a {
 
 #presentation {
   padding: 0;
+  margin: 0;
   height: 100vh;
 }
 
@@ -100,15 +101,14 @@ header .header-content a {
   background-color: rgba(0, 0, 0, .4);
 }
 
-
-
-
 .logoHolder {
   width: 160px;
   height: 160px;
   border-radius: 10px;
   left: 0;
   right: 0;
+  position: relative;
+  z-index: 100;
 }
 
 .logo {
@@ -116,6 +116,13 @@ header .header-content a {
   height: 160px;
   border-radius: 10px;
   padding: 40px 0;
+  height: auto;
+  max-width: 180px;
+  position: relative;
+  top: 3px;
+  bottom: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 15;
 }
 
 /* Menu Items Styling */
@@ -123,6 +130,13 @@ header .header-content a {
   position: relative;
   margin: 0 5px;
   transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease forwards;
+  color: #003366 !important;
+  transform: translateZ(0);
+  /* Hardware acceleration */
+  will-change: transform;
+  /* Performance hint */
+  
 }
 
 .menu-item i {
@@ -150,6 +164,7 @@ header .header-content a {
   left: 0;
   background-color: #789DBF;
   transition: width 0.3s ease;
+  
 }
 
 .menu-item:hover::after {
@@ -163,11 +178,6 @@ header .header-content a {
 
 .menu-item.active::after {
   width: 100%;
-}
-
-/* Animation for Icon and Text */
-.menu-item {
-  animation: fadeIn 0.5s ease forwards;
 }
 
 /* Stagger animation for menu items */
@@ -217,8 +227,9 @@ header .header-content a {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0;
+  margin: 0;
   position: relative;
 }
 
@@ -226,7 +237,7 @@ header .header-content a {
 .hero-carousel {
   position: relative;
   height: 80vh;
-  width: 50%;
+  width: 100%;
   overflow: hidden;
   margin-top: 40px;
 
@@ -245,7 +256,7 @@ header .header-content a {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   opacity: 0;
   transition: opacity 1s ease, transform 1.2s ease;
   transform: scale(1.05);
@@ -415,10 +426,6 @@ header .header-content a {
 }
 
 
-.logoHolder {
-  position: relative;
-  z-index: 100;
-}
 
 .logo-link {
   display: inline-block;
@@ -441,22 +448,6 @@ header .header-content a {
 .accent--text {
   color: var(--primary-red);
 }
-
-/* Header Styles */
-
-
-.menu-item {
-  color: #003366 !important;
-  position: relative;
-
-  transition: all 0.3s ease;
-}
-
-.menu-item::after {
-  background-color: #789DBF;
-}
-
-
 
 /* Button Styles */
 .btn {
@@ -656,10 +647,6 @@ header .header-content a {
   line-height: 1.5;
 }
 
-.logoHolder {
-  position: relative;
-  z-index: 100;
-}
 
 .logo-link {
   display: inline-block;
@@ -675,15 +662,6 @@ header .header-content a {
   filter: drop-shadow(0 0 10px rgba(0, 51, 102, 0.9)) drop-shadow(0 0 15px rgba(204, 0, 0, 0.8)) drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
 }
 
-.logo {
-  height: auto;
-  max-width: 180px;
-  position: relative;
-  top: 3px;
-  bottom: 1rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 15;
-}
 
 
 .hamburger-menu {
@@ -981,8 +959,7 @@ html {
   margin-bottom: 30px;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group input{
   width: 100%;
   padding: 12px 0;
   font-size: 1rem;
@@ -994,8 +971,16 @@ html {
 }
 
 .form-group textarea {
+  width: 100%;
   height: 120px;
   resize: none;
+  padding: 12px 0;
+  font-size: 1rem;
+  color: #333;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .form-group label {
@@ -1226,13 +1211,6 @@ html {
   opacity: 1;
 }
 
-.menu-item {
-  transform: translateZ(0);
-  /* Hardware acceleration */
-  will-change: transform;
-  /* Performance hint */
-}
-
 .copyright {
   padding: 20px 0;
   background-color: #f5f5f5;
@@ -1338,6 +1316,7 @@ html {
 
   .about-container {
     grid-template-columns: 1fr;
+    flex-direction: column-reverse;
   }
   .about-section {
     padding: 60px 0;
@@ -1353,7 +1332,7 @@ html {
   }
 
   .about-card {
-    padding: 20px;
+    padding: 40px;
   }
 
   .logo {
@@ -1422,13 +1401,13 @@ html {
   }
 
   .hero-image-container {
-    width: 100vw;
-    height: 50vh;
+    width: 100%;
+    height: 70%;
   }
 
   .hero-image-container img {
     height: 100%;
-    width: 100vw;
+    width: 100%;
     bottom: 0;
 
   }
@@ -1528,12 +1507,16 @@ html {
     line-height: 5rem;
   }
 
- 
-
 }
 
 /* Mobile Phones (480px and below) */
 @media screen and (max-width: 480px) {
+  
+  .about-container {
+    grid-template-columns: 1fr;
+    flex-direction: column-reverse;
+  }
+
   .contact {
     padding: 40px 15px;
   }
@@ -1583,9 +1566,24 @@ html {
     font-size: 0.9rem;
   }
 
+  header{
+    height: 3rem;
+  }
+
+  section{
+    padding: 0 0;
+  }
+
+  .hero-content{
+    margin-top: 35px;
+    width: 100%;
+
+  }
+
   .hero-section {
     flex-direction: column-reverse;
     padding: 0;
+    margin:0;
     
   }
 
@@ -1602,6 +1600,10 @@ html {
   #presentation {
     padding: 0;
     height: 120vh;
+  }
+
+  .menu-item{
+    display:none;
   }
 
   .none-block-md {
