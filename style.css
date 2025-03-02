@@ -1395,7 +1395,7 @@ html {
     display: block;
     position: relative;
     z-index: 1000;
-    ;
+    
   }
 
   .hero-section {
@@ -1424,39 +1424,7 @@ html {
     flex-direction: column-reverse;
   }
 
-  .menu-toggle {
-    position: relative;
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-top: 100px;
-    z-index: 1000;
-  }
-
-  .menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #cc0000;
-    margin: 6px 0;
-    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  }
-
-  .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 6px);
-  }
-
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -6px);
-  }
+ 
 
   .mobile-nav {
     position: fixed;
@@ -1517,7 +1485,7 @@ html {
 }
 
 /* Mobile Phones (480px and below) */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) and (max-width: 767px) {
   
   .about-container {
     grid-template-columns: 1fr;
@@ -1562,7 +1530,40 @@ html {
     gap: 10px;
   }
 
+  .menu-toggle {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    right: 100px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 100px;
+    z-index: 1000;
+  }
 
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #cc0000;
+    margin: 6px 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 6px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -6px);
+  }
 
   .form-group {
     margin-bottom: 25px;
@@ -1575,7 +1576,7 @@ html {
   }
 
   header{
-    height: 3rem;
+    height: 6rem;
   }
 
   section{
@@ -1636,4 +1637,10 @@ html {
   .title-suffix {
     font-size: 1.5rem;
   }
+  .logo {
+    width: 143px;
+    right: 63px;
+    top: 9px;
+  }
+
 }

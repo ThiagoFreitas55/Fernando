@@ -111,14 +111,7 @@
     let currentIndex = 0;
     const slideWidth = slides[0].offsetWidth + 32; // Including margin
   
-    // Create dots
-    slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
+    
   
     const dots = document.querySelectorAll('.dot');
   
@@ -146,19 +139,7 @@
       });
     }
   
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex < slides.length - 1) {
-        currentIndex++;
-        goToSlide(currentIndex);
-      }
-    });
-  
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        goToSlide(currentIndex);
-      }
-    });
+    
   
     // Auto-play with smooth item-by-item transition
     const autoPlay = setInterval(() => {
@@ -283,13 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  if (nextBtn) {
-    nextBtn.addEventListener('click', function() {
-      nextSlide();
-      stopAutoplay();
-      startAutoplay(); // Reiniciar com novo tempo
-    });
-  }
+  
   
   // Event listeners para indicadores
   indicators.forEach((indicator, index) => {
