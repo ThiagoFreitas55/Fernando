@@ -380,7 +380,7 @@ header .header-content a {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  background-color: #003366;
+  background:linear-gradient(90deg, #003366, #789DBF);;
   color: #ffffff;
 
   border-radius: 4px;
