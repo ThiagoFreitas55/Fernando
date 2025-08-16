@@ -1638,7 +1638,7 @@ html {
   }
   .hero-image-container img {
     width: 100%;
-    height: 50%;
+    height: 40%;
     object-fit: fill;
     bottom: 0;
     margin-bottom: -90px;
@@ -1650,7 +1650,7 @@ html {
 
   #presentation {
     padding: 0;
-    height: 175vh;
+    height: 155vh;
   }
 
   .menu-item{
@@ -1673,9 +1673,8 @@ html {
   }
   .hero-carousel {
     width: 100vw;
-    height: 100vh;
-    min-height: 350px;
-    max-height: 100vh;
+    height: 50vh;
+
   }
   .hero-image-container {
     width: 100vw;
