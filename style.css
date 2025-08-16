@@ -91,7 +91,7 @@ header .header-content a {
 #presentation {
   padding: 0;
   margin: 0;
-  height: 100vh;
+  height: 160vh;
 }
 
 .presentation-content {
@@ -1054,7 +1054,6 @@ html {
   transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(0, 119, 181, 0.6);
 }
-}
 
 .carousel-container {
   max-width: 1200px;
@@ -1307,6 +1306,14 @@ html {
     flex-direction: column;
   }
 
+  .hero-section {
+        flex-direction: column-reverse;
+    }
+
+  .hero-content {
+    padding: 100px 64px 0;
+  }
+
   .hero-carousel {
     width: 100vw;
     height: 120vh;
@@ -1416,9 +1423,11 @@ html {
   }
 
   .hero-content {
-    padding: 2rem;
-    text-align: center;
-    margin: 46px -28px;
+    padding: 100px 64px 0;
+  }
+
+  .hero-subtitle{
+    margin-bottom: 0;
   }
 
   .hamburger-menu {
@@ -1439,9 +1448,10 @@ html {
   }
   .hero-image-container img {
     width: 100%;
-    height: 100%;
+    height: 140%;
     object-fit: fill;
     bottom: 0;
+
   }
 
   .hero-image-container {
@@ -1513,9 +1523,8 @@ html {
   }
 
 }
-
 /* Mobile Phones (480px and below) */
-@media screen and (max-width: 480px) and (max-width: 767px) {
+@media screen and (max-width: 480px) {
   
   .about-container {
     grid-template-columns: 1fr;
@@ -1613,11 +1622,6 @@ html {
     padding: 0 0;
   }
 
-  .hero-content{
-    margin-top: 35px;
-    width: 100%;
-
-  }
 
   .hero-section {
     flex-direction: column-reverse;
@@ -1625,15 +1629,19 @@ html {
     margin:0;
     
   }
+  .hero-content {
+    padding: 120px 64px 0;
+  }
   .hero-carousel{
     width: 100%;
     height: 120vh;
   }
   .hero-image-container img {
     width: 100%;
-    height: 100%;
+    height: 50%;
     object-fit: fill;
     bottom: 0;
+    margin-bottom: -90px;
   }
 
   .logo-inline {
@@ -1642,7 +1650,7 @@ html {
 
   #presentation {
     padding: 0;
-    height: 137vh;
+    height: 175vh;
   }
 
   .menu-item{
@@ -1663,7 +1671,19 @@ html {
   .title-prefix {
     font-size: 1.5rem;
   }
-
+  .hero-carousel {
+    width: 100vw;
+    height: 100vh;
+    min-height: 350px;
+    max-height: 100vh;
+  }
+  .hero-image-container {
+    width: 100vw;
+    height: 100vh;
+    min-height: 350px;
+    max-height: 100vh;
+  }
+  
   .title-suffix {
     font-size: 1.5rem;
   }
@@ -1674,3 +1694,4 @@ html {
   }
 
 }
+
